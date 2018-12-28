@@ -1,0 +1,15 @@
+ <h1>List of Attendances</h1>
+ 
+<table>
+  <tr>
+    <th>status</th>
+    <th>date</th>
+  </tr>
+ 
+  <% @employee_attendances.each do |attendance| %>
+    <tr>
+      <td><%= attendance.status %></td>
+      <td><%= attendance.date %></td> 
+     </tr>
+  <% end %>
+</table> 

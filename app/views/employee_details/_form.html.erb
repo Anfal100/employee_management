@@ -1,0 +1,49 @@
+<%= form_with(model: @employee_detail) do |form| %>
+  <% if @employee_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@employee_detail.errors.count, "error") %> prohibited
+        this employeeDetail from being saved:
+      </h2>
+      <ul>
+        <% @employee_detail.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :employee_id, value: @employee_detail.employee_id %>
+
+  <p>
+    <%= form.label :name %><br/>
+    <%= form.text_field :name %>
+  </p>
+  
+  <p>
+    <%= form.label :photo %><br/>
+    <%= form.file_field :photo %>
+  </p>
+  
+  <p>
+    <%= form.label :age %><br/>
+    <%= form.text_field :age %>
+  </p>   
+  <p>
+    <%= form.label :marriage_status %><br/>
+    <%= form.select :marriage_status, ['Single','Married'] %>
+  </p>
+
+  <p>
+    <%= form.label :state %><br/>
+    <%= form.text_field :state %>
+  </p>
+     
+  <p>
+    <%= form.label :address %><br/>
+    <%= form.text_area :address %>
+  </p>
+      
+  <%= form.submit %>
+      
+ <% end %>

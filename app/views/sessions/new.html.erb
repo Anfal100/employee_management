@@ -1,0 +1,19 @@
+<h1>Login Page</h1>
+
+<%= form_with scope: :employee_signup, url: sessions_create_path, local:true do |form| %> 
+
+<div class = "field">
+  <%= form.label :email %><br>
+  <%= form.text_field :email %>
+</div>
+
+<div class = "field">
+  <%= form.label :password %><br>
+  <%= form.password_field :password %>
+</div>
+
+<div class = "action">
+  <%= form.submit "Log In" %>
+  <%= link_to 'Sign Up', new_employee_signup_path %>
+</div>
+<% end %>

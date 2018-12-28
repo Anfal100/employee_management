@@ -1,0 +1,36 @@
+  <%= form_with(model: @employee_leave) do |form| %>
+   <% if @employee_leave.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@employee_leave.errors.count, "error") %> prohibited
+        this employeeleave from being saved:
+      </h2>
+      <ul>
+        <% @employee_leave.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form.hidden_field :employee_id, value: @employee_leave.employee_id %>
+  <p>
+    <%= form.label :leave_type %>
+    <%= form.select :leave_type, ['PL','CL','SL','Other'] %>
+  </p>
+   <p>
+    <%= form.label :start_date %>
+    <%= form.date_field :start_date %>
+  </p>
+
+   <p>
+    <%= form.label :end_date %>
+    <%= form.date_field :end_date %>
+  </p>
+
+   <p>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </p>
+  
+  <%= form.submit %>    
+ <% end %>

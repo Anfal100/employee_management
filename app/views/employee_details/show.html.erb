@@ -1,0 +1,34 @@
+<p>
+  <strong>Name:</strong>
+  <%= @employee_detail.name %>
+</p>
+ 
+<p>
+  <strong>Photo:</strong>
+  <%= @employee_detail.photo %>
+</p>
+
+
+<p>
+  <strong>Age:</strong>
+  <%= @employee_detail.age %>
+</p>
+
+<p>
+  <strong>Marriage_status:</strong>
+  <%= @employee_detail.marriage_status %>
+</p>
+
+
+<p>
+  <strong>State:</strong>
+  <%= @employee_detail.state %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @employee_detail.address %>
+</p>
+
+<%= link_to 'Edit', edit_employee_detail_path %>
+<%= link_to 'Back', employees_path%>

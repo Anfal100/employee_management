@@ -1,0 +1,30 @@
+<%= form_with(model: @employee_attendance) do |form| %>
+  <% if @employee_attendance.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@employee_attendance.errors.count, "error") %> prohibited
+        this EmployeeAttendance from being saved:
+      </h2>
+      <ul>
+        <% @employee_attendance.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.hidden_field :employee_id, value: @employee_attendance.employee_id %>
+  <p>
+    <%= form.label :status%><br/>
+    <%= form.select :status, ['Present','Absent','HalfDay'] %>
+  </p>
+
+   <p>
+    <%= form.label :date %><br/>
+    <%= form.date_field :date %>
+  </p>
+  
+  <%= form.submit %>    
+ <% end %>
+
+ 
